@@ -1,3 +1,4 @@
+import { InTextLink } from "@/components/inTextLink";
 import Link from "next/link";
 
 const blurredImage = {
@@ -12,26 +13,47 @@ const blurredImage = {
   backgroundRepeat: "no-repeat",
 };
 
+const currentEmployer = {
+  url: "www.capgemini.com",
+  name: "Capgemini",
+};
+
 export default function Home() {
   return (
-    <section className="flex justify-between flex-col md:flex-row gap-20">
+    <section className="flex justify-between flex-col md:flex-row gap-10">
       <div className="order-2 md:order-1 w-full flex flex-col justify-center">
-        <h1 className="font-semibold text-3xl mb-10">Hey!</h1>
+        <h1
+          className="animate-text font-semibold text-3xl mb-10"
+          style={{ "--stagger": 0 } as React.CSSProperties}
+        >
+          Hey!
+        </h1>
         <div className="grid gap-5">
-          <p>
-            I’m Kevin. Interested in designing interfaces that resonate with
-            users. Dedicated to precision, polish, and diverse creative
-            pursuits.
+          <p
+            style={{ "--stagger": 1 } as React.CSSProperties}
+            className="animate-text"
+          >
+            I’m Kevin Gonzalez, a Front-end Engineer interested in designing
+            interfaces that resonate with users. Dedicated to precision, polish,
+            and diverse creative pursuits.
           </p>
-          <p>
-            As well as <Link href="/craft">coding</Link>, you can find me{" "}
-            <Link href="/art">painting</Link> and{" "}
-            <Link href="/blog">writing</Link> my ideas about design, code and
-            art.
+          <p
+            style={{ "--stagger": 2 } as React.CSSProperties}
+            className="animate-text"
+          >
+            As well as <InTextLink href="/craft">coding</InTextLink>, you can
+            find me <InTextLink href="/art">painting</InTextLink> and{" "}
+            <InTextLink href="/blog">writing</InTextLink> my ideas about design,
+            code and art.
           </p>
-          <p>
-            Currently <strong>crafting magical interfaces</strong> at{" "}
-            <strong>Capgemini</strong>
+          <p
+            style={{ "--stagger": 3 } as React.CSSProperties}
+            className="animate-text"
+          >
+            Currently crafting interfaces at{" "}
+            <InTextLink href={currentEmployer.url}>
+              {currentEmployer.name}
+            </InTextLink>
           </p>
         </div>
       </div>
