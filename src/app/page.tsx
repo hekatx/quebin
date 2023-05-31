@@ -65,7 +65,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="order-1 md:order-2 overflow-hidden w-full">
+      <div className="order-1 md:order-2 overflow-hidden w-full h-72 md:h-auto block">
         <BlurredImage {...blurImg} variant="blur-down" />
       </div>
     </section>
