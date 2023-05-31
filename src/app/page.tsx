@@ -14,7 +14,7 @@ const blurredImage = {
 };
 
 const currentEmployer = {
-  url: "www.capgemini.com",
+  url: "https://www.capgemini.com/",
   name: "Capgemini",
 };
 
@@ -51,7 +51,7 @@ export default function Home() {
             className="animate-text"
           >
             Currently crafting interfaces at{" "}
-            <InTextLink href={currentEmployer.url}>
+            <InTextLink passHref={true} href={currentEmployer.url}>
               {currentEmployer.name}
             </InTextLink>
           </p>
