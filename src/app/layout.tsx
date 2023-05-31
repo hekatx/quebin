@@ -34,18 +34,12 @@ function Header() {
       <nav
         className={`${childWidthStyles} flex gap-10 justify-end items-center font-semibold`}
       >
-        <Link href="/" className="mr-auto animate-text">
+        <Link href="/" className="mr-auto">
           <span className="font-semibold">kg.</span>
         </Link>
-        <Link href="/blog" className="animate-text">
-          Blog
-        </Link>
-        <Link href="/craft" className="animate-text">
-          Craft
-        </Link>
-        <Link href="/art" className="animate-text">
-          Art
-        </Link>
+        <Link href="/blog">Blog</Link>
+        <Link href="/craft">Craft</Link>
+        <Link href="/art">Art</Link>
       </nav>
     </header>
   );
