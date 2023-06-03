@@ -21,7 +21,6 @@ export const BlurredImage: React.FC<IImageProps> = ({
   variant,
 }) => {
   const [isLoaded, setIsLoaded] = React.useState(false);
-  console.log(isLoaded);
 
   return (
     <div
