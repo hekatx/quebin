@@ -45,10 +45,12 @@ export default async function Post({ params }: Props) {
 				</ul>
 			</header>
 
-			<div
-				className="text-xl mb-5"
-				dangerouslySetInnerHTML={{ __html: post.excerpt }}
-			/>
+			{post.excerpt ? (
+				<div
+					className="text-xl mb-5"
+					dangerouslySetInnerHTML={{ __html: post.excerpt }}
+				/>
+			) : null}
 
 			<div
 				className="w-[70ch] mx-auto"

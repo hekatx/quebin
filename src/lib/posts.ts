@@ -1,8 +1,15 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
 import html from "remark-html";
+import { unified } from "unified";
+import remarkRehype from "remark-rehype";
+import remarkParse from "remark-parse";
+//@ts-ignore
+import addClass from "rehype-add-classes";
+import rehypeDocument from "rehype-document";
+import rehypeFormat from "rehype-format";
+import rehypeStringify from "rehype-stringify";
 
 const commonFields = [
 	"title",
@@ -44,7 +51,13 @@ export async function getPostBySlug(
 			items[field] = realSlug;
 		}
 		if (field === "content") {
-			const parsedContent = await remark().use(html).process(content);
+			const parsedContent = await unified()
+				.use(remarkParse)
+				.use(remarkRehype)
+				.use(rehypeFormat)
+				.use(addClass, { p: "mb-5", h2: "text-xl my-5" })
+				.use(rehypeStringify)
+				.process(content);
 			items[field] = String(parsedContent);
 		}
 		if (field === "date") {
