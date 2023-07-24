@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/header";
+import Providers from "@/lib/providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,9 +32,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} w-full`}>
         <Header />
-        <main className={`mx-auto px-10 max-w-5xl w-full py-8`}>
-          {children}
-        </main>
+        <Providers>
+          <main className={`mx-auto px-10 max-w-5xl w-full py-16`}>
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
