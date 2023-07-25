@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 	console.log({ posts });
 
 	return posts.map((post) => ({
-		slug: post.replaceAll(".txt", ""),
+		slug: post.replace(".md", "").replaceAll(".txt", ""),
 	}));
 }
 
