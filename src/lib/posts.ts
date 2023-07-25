@@ -39,7 +39,7 @@ export async function getPostBySlug(
 	slug: string,
 	fields: string[] = commonFields,
 ) {
-	const realSlug = slug.replace(/\.md$/, "").replace(/\.txt/, "");
+	const realSlug = slug.replace(/\.md$/, "").replace(/\.txt$/, "");
 	const fullPath = join(postsDirectory, `${realSlug}.md`);
 	const fileContents = fs.readFileSync(fullPath, "utf8");
 	const { data, content } = matter(fileContents);
