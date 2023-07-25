@@ -48,7 +48,7 @@ export async function getPostBySlug(
 
 	fields.forEach(async (field) => {
 		if (field === "slug") {
-			items[field] = realSlug;
+			items[field] = data.slug;
 		}
 		if (field === "content") {
 			const parsedContent = await unified()
