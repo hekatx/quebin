@@ -1,15 +1,15 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import html from "remark-html";
 import { unified } from "unified";
 import remarkRehype from "remark-rehype";
 import remarkParse from "remark-parse";
 //@ts-ignore
 import addClass from "rehype-add-classes";
-import rehypeDocument from "rehype-document";
 import rehypeFormat from "rehype-format";
 import rehypeStringify from "rehype-stringify";
+
+export const postStyles = { p: "mb-5", h2: "text-xl font-bold mb-5 mt-10" };
 
 const commonFields = [
 	"title",
@@ -55,7 +55,7 @@ export async function getPostBySlug(
 				.use(remarkParse)
 				.use(remarkRehype)
 				.use(rehypeFormat)
-				.use(addClass, { p: "mb-5", h2: "text-xl my-5" })
+				.use(addClass, postStyles)
 				.use(rehypeStringify)
 				.process(content);
 			items[field] = String(parsedContent);

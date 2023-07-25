@@ -20,7 +20,6 @@ export function Posts({ allPosts }: { allPosts: Posts }) {
 	const [clickedTags, setClickedTags] = useState<string[]>([]);
 
 	function handleToggleTag(tag: string) {
-		console.log(tag, clickedTags);
 		if (clickedTags.includes(tag)) {
 			setClickedTags((prev) => prev.filter((prevTag) => prevTag !== tag));
 		} else {
@@ -28,13 +27,13 @@ export function Posts({ allPosts }: { allPosts: Posts }) {
 		}
 	}
 
-	const arePostsFiltered = clickedTags.length > 0;
+	const isAnyFilterActive = clickedTags.length > 0;
 
 	const filteredPosts = allPosts.filter((post) =>
 		clickedTags.every((tag) => post.tags.includes(tag)),
 	);
 
-	const posts = arePostsFiltered ? filteredPosts : allPosts;
+	const posts = isAnyFilterActive ? filteredPosts : allPosts;
 
 	return (
 		<>
