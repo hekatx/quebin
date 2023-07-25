@@ -12,8 +12,10 @@ type Props = {
 export async function generateStaticParams() {
 	const posts = getPostSlugs();
 
+	console.log({ posts });
+
 	return posts.map((post) => ({
-		slug: post.replace(".txt", ""),
+		slug: post.replaceAll(".txt", ""),
 	}));
 }
 
