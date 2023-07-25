@@ -18,6 +18,8 @@ function Tag({ children }: { children: ReactNode }) {
 }
 
 export default async function Post({ params }: Props) {
+	if (!params.slug) return null;
+
 	const post = await getPostBySlug(params.slug);
 
 	return (
