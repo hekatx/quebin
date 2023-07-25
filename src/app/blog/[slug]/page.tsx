@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 	const posts = getPostSlugs();
 
 	return posts.map((post) => ({
-		slug: post,
+		slug: post.replace(".txt", ""),
 	}));
 }
 
