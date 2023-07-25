@@ -53,5 +53,5 @@ module.exports = {
 		},
 	},
 	plugins: [],
-	safelist: ["my-5", "mb-5", "font-bold", "mt-10"],
+	safelist: ["text-xl", "font-bold", "mb-5", "mt-10", "mb-5"],
 };

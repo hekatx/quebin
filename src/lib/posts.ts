@@ -9,7 +9,10 @@ import addClass from "rehype-add-classes";
 import rehypeFormat from "rehype-format";
 import rehypeStringify from "rehype-stringify";
 
-export const postStyles = { p: "mb-5", h2: "text-xl font-bold mb-5 mt-10" };
+export const postStyles = {
+	p: "mb-5",
+	h2: "text-xl font-bold mb-5 mt-10",
+};
 
 const commonFields = [
 	"title",

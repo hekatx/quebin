@@ -1,13 +1,3 @@
-/* Base
-  =========================================== */
-
-/**
- * 1. Enforce hardware acceleration
- * 2. Optional: prevent CLS by defining the aspect ratio up front.
- *    `--img-aspect-ratio` is set via inline `style`, and determined via the 
- *    required `width` and `height` props.
- * 3. Visually hide alt-text
- */
 .img {
   --img-blur: 42px;
   --img-scale: 1.5;

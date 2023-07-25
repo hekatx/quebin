@@ -12,8 +12,6 @@ type Props = {
 export async function generateStaticParams() {
 	const posts = getPostSlugs();
 
-	console.log({ posts });
-
 	return posts.map((post) => ({
 		slug: post.replace(".md", "").replaceAll(".txt", ""),
 	}));
@@ -38,12 +36,12 @@ export default async function Post({ params }: Props) {
 				<p className="text-sm text-neutral-500">
 					<time className="text-neutral-500">{post.date}</time>
 				</p>
-				<h1 className="font-extrabold text-3xl mb-1">{post.title}</h1>
+				<h1 className="font-extrabold text-5xl mb-12">{post.title}</h1>
 			</header>
 
 			{post.excerpt ? (
 				<div
-					className="text-xl mb-10"
+					className="text-xl mb-12"
 					dangerouslySetInnerHTML={{ __html: post.excerpt }}
 				/>
 			) : null}
