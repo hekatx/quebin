@@ -1,4 +1,4 @@
-import { getPostBySlug } from "@/lib/posts";
+import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { ReactNode } from "react";
 
 type Params = {
@@ -8,6 +8,14 @@ type Params = {
 type Props = {
 	params: Params;
 };
+
+export async function generateStaticParams() {
+	const posts = getPostSlugs();
+
+	return posts.map((post) => ({
+		slug: post,
+	}));
+}
 
 function Tag({ children }: { children: ReactNode }) {
 	return (
