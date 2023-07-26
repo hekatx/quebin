@@ -23,7 +23,7 @@ export default async function Post({ params }: Props) {
 
 	return (
 		<section>
-			<header className="mb-5">
+			<header className="mb-5 text-center">
 				<p className="text-xs text-neutral-500">
 					<time className="text-neutral-500">{post.date}</time>
 				</p>
