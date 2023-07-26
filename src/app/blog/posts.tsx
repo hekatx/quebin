@@ -73,8 +73,8 @@ function Post({ post }: { post: Posts[number] }) {
 				<h2 className="font-bold text-xl">{title}</h2>
 			</Link>
 			<p>{excerpt}</p>
-			<div className="flex gap-3">
-				<time className="text-sm text-neutral-500">{formatteDate}</time>
+			<div className="flex gap-3 items-center">
+				<time className="text-xs text-neutral-500">{formatteDate}</time>
 				<div className="flex gap-3">
 					{tags.map((tag) => (
 						<Tag key={tag}>{tag}</Tag>

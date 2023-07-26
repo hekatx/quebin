@@ -1,5 +1,4 @@
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
-import { ReactNode } from "react";
 
 type Params = {
 	slug: string;
@@ -17,14 +16,6 @@ export async function generateStaticParams() {
 	}));
 }
 
-function Tag({ children }: { children: ReactNode }) {
-	return (
-		<span className="p-1 bg-zinc-800 text-xs rounded-sm tracking-wider">
-			{children}
-		</span>
-	);
-}
-
 export default async function Post({ params }: Props) {
 	if (!params.slug) return null;
 
@@ -33,21 +24,14 @@ export default async function Post({ params }: Props) {
 	return (
 		<section>
 			<header className="mb-5">
-				<p className="text-sm text-neutral-500">
+				<p className="text-xs text-neutral-500">
 					<time className="text-neutral-500">{post.date}</time>
 				</p>
 				<h1 className="font-extrabold text-5xl mb-12">{post.title}</h1>
 			</header>
 
-			{post.excerpt ? (
-				<div
-					className="text-xl mb-12"
-					dangerouslySetInnerHTML={{ __html: post.excerpt }}
-				/>
-			) : null}
-
 			<div
-				className="w-[70ch] mx-auto"
+				className="max-w-[70ch] mx-auto"
 				dangerouslySetInnerHTML={{ __html: post.content }}
 			/>
 		</section>
