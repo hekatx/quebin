@@ -1,6 +1,6 @@
 import { BlurredImage } from "@/components/blurredImage";
 import { InTextLink } from "@/components/inTextLink";
-import { getImage } from "@/lib/images";
+import { getImageFromAssets } from "@/lib/images";
 
 const currentEmployer = {
 	url: "https://www.capgemini.com/",
@@ -8,7 +8,7 @@ const currentEmployer = {
 };
 
 export default async function Home() {
-	const heroImage = await getImage("self.png");
+	const heroImage = await getImageFromAssets("self.png");
 
 	return (
 		<section className="flex justify-between flex-col md:flex-row gap-10">

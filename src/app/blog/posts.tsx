@@ -35,8 +35,6 @@ export function Posts({ allPosts }: { allPosts: Posts }) {
 
 	const posts = isAnyFilterActive ? filteredPosts : allPosts;
 
-	console.log({ filteredPosts });
-
 	return (
 		<>
 			<div className="flex gap-3 my-6">

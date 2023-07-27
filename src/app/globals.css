@@ -99,7 +99,7 @@ body {
     width: 100%;
     display: inline-block;
     margin: 0 0 1rem 0;
-    @apply rounded-xl border border-gray-600;
+    @apply border border-gray-600;
   }
 
   @supports(grid-template-rows: masonry) {

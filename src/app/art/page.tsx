@@ -1,3 +1,6 @@
+import { BlurredImage } from "@/components/blurredImage";
+import { getImageFromURL } from "@/lib/images";
+
 const exam = [
 	"https://drscdn.500px.org/photo/126979479/w%3D440_h%3D440/v2?webp=true&v=2&sig=09ea71b0ddb91e24a59cecfb79a0189a2ab575d10372d3e8d3258e38f97a6a49",
 	"https://drscdn.500px.org/photo/435236/q%3D80_m%3D1500/v2?webp=true&sig=67031bdff6f582f3e027311e2074be452203ab637c0bd21d89128844becf8e40",
@@ -15,14 +18,25 @@ const exam = [
 	"https://drscdn.500px.org/photo/435236/q%3D80_m%3D1500/v2?webp=true&sig=67031bdff6f582f3e027311e2074be452203ab637c0bd21d89128844becf8e40",
 ];
 
-export default function Art() {
+export default async function Art() {
+	const artImages = await Promise.all(
+		exam.map(async (img) => await getImageFromURL(img)),
+	);
 	return (
 		<section>
 			<h1 className="font-bold text-3xl animate-text mb-5">Art</h1>
 			<section className="art-grid">
-				{exam.map((src) => (
-					<img key={src} src={src} />
-				))}
+				{artImages.map((src) => {
+					return (
+						<BlurredImage
+							key={src.img.src}
+							alt=""
+							placeholder={src.css}
+							{...src.img}
+							variant="blur-down"
+						/>
+					);
+				})}
 			</section>
 		</section>
 	);
