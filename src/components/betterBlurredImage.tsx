@@ -4,7 +4,9 @@ import { cn } from "@/lib/utils";
 import React, { CSSProperties, useLayoutEffect, useRef } from "react";
 import { AnimatedBlur } from "@/lib/blur";
 
-AnimatedBlur.addStyle();
+if (typeof document !== "undefined") {
+	AnimatedBlur.addStyle();
+}
 
 const ANIMATION_CONFIG = {
 	"--blur": "42px",
