@@ -44,6 +44,7 @@
 		"unified": "^10.1.2"
 	},
 	"devDependencies": {
+		"@xpd/tailwind-3dtransforms": "^1.0.3",
 		"rome": "12.1.3"
 	}
 }

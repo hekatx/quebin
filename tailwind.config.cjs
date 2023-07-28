@@ -52,6 +52,6 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("@xpd/tailwind-3dtransforms")],
 	safelist: ["text-xl", "font-bold", "mb-5", "mt-10", "mb-5"],
 };
