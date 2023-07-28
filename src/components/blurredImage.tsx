@@ -9,8 +9,7 @@ const ANIMATION_CONFIG = {
 	"--duration": "1.2s",
 } as unknown as React.CSSProperties;
 
-const common =
-	"absolute block max-w-full w-full h-full inset-0 blur-[var(--blur)] scale[var(--scale)]";
+const common = "absolute block max-w-full w-full h-full inset-0 ";
 
 interface IImageProps {
 	src: string;
@@ -34,7 +33,6 @@ export const BlurredImage: React.FC<IImageProps> = ({
 		<div
 			className={cn(
 				"block relative overflow-hidden pb-[var(--aspect-ratio)] translate-z-0",
-				isLoaded && "is-loaded",
 			)}
 			style={{
 				["--aspect-ratio" as keyof React.CSSProperties]: `${
@@ -43,12 +41,17 @@ export const BlurredImage: React.FC<IImageProps> = ({
 				...ANIMATION_CONFIG,
 			}}
 		>
-			<div className={common} style={{ ...placeholder, ...ANIMATION_CONFIG }} />
+			<div
+				className={cn(common, "blur-[var(--blur)] scale-[var(--scale)]")}
+				style={{ ...placeholder, ...ANIMATION_CONFIG }}
+			/>
 			<Image
 				className={cn(
 					common,
 					"text-[0] opacity-0",
-					isLoaded && "opacity-100 scale-100 blur-0",
+					isLoaded
+						? "opacity-100 scale-100 blur-0"
+						: "blur-[var(--blur)] scale-[var(--scale)]",
 					"duration-[var(--duration)] ease-[ease] transition-[filter,opacity,transform] will-change-[filter,transform]",
 				)}
 				style={ANIMATION_CONFIG}
