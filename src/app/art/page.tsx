@@ -1,4 +1,4 @@
-import { BlurredImage } from "@/components/blurredImage";
+import { BetterBlurredImage } from "@/components/betterBlurredImage";
 import { getImageFromURL } from "@/lib/images";
 
 const exam = [
@@ -28,7 +28,7 @@ export default async function Art() {
 			<section className="art-grid">
 				{artImages.map((src) => {
 					return (
-						<BlurredImage
+						<BetterBlurredImage
 							key={src.img.src}
 							alt=""
 							placeholder={src.css}

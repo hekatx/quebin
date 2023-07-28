@@ -1,4 +1,4 @@
-import { BlurredImage } from "@/components/blurredImage";
+import { BetterBlurredImage } from "@/components/betterBlurredImage";
 import { InTextLink } from "@/components/inTextLink";
 import { getImageFromAssets } from "@/lib/images";
 
@@ -49,7 +49,7 @@ export default async function Home() {
 				</div>
 			</div>
 			<div className="rounded-xl border-gray-50 order-1 md:order-2 overflow-hidden w-full h-72 md:h-auto block">
-				<BlurredImage
+				<BetterBlurredImage
 					alt="hola"
 					placeholder={heroImage.css}
 					{...heroImage.img}
