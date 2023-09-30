@@ -93,16 +93,20 @@ body {
   .art-grid {
     columns: 6 200px;
     column-gap: 1rem;
+    gap: 1rem;
   }
 
   .art-grid img {
     width: 100%;
     display: inline-block;
-    margin: 0 0 1rem 0;
     @apply border border-gray-600;
   }
 
-  @supports(grid-template-rows: masonry) {
+  .art-grid div {
+    margin: 0 0 1rem 0;
+  }
+
+  @supports (grid-template-rows: masonry) {
     .art-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
