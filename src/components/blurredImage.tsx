@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 const ANIMATION_CONFIG = {
   "--blur": "42px",
+  "--scale": "1.2",
   "--duration": "1.2s",
 } as unknown as React.CSSProperties;
 
